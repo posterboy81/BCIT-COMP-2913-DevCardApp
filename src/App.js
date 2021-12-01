@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Router, Outlet, ReactLocation } from "react-location";
+import CreateCard from "./CreateCard";
+import CardShowcase from "./CardShowcase";
+import { useState } from "react";
 
-function App() {
+// Step 1: Create an instance of the ReactLocation Library
+const location = new ReactLocation();
+// Step 2: Specify the URLS (routes)/Pages for your application
+
+
+// Step 3: Wrap our entire application in the React Location Library
+
+export default function App() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    aboutMe: "",
+    githubURL: "",
+    twitterURL: "",
+    favouriteBooks: "",
+    HTML: false,
+    CSS: false,
+    JS: false,
+    Git: false,
+    React: false,
+    NodeJS: false
+  });
+
+  const routes = [
+    {
+      path: "/",
+      element: <CreateCard formData = {formData} setFormData={setFormData}/>
+    },
+    {
+      path: "showcase",
+      element: <CardShowcase formData = {formData}/>
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router routes={routes} location={location}>
+      <header>{JSON.stringify(formData)}</header>
+      <div>
+        <Outlet />
+      </div>
+    </Router>
   );
 }
-
-export default App;
