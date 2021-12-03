@@ -2,14 +2,25 @@ import { useNavigate } from "react-location";
 
 export default function CreateCard({ formData, setFormData }) {
   const handleChange = (e) => {
+    let key = e.target.value;
     let isChecked = e.target.checked;
-    setFormData({ ...formData, [e.target.value]: isChecked });
+    setFormData((formData) => {
+      return { ...formData, [key]: isChecked };
+    });
+  };
+
+  const handleTextChange = (e) => {
+    let data = e.target.value;
+    let name = e.target.name;
+    setFormData((formData) => {
+      return { ...formData, [name]: data };
+    });
   };
 
   const navigate = useNavigate();
 
   const handleClick = (e) => {
-    e.preventDefault(); // DON'T REFRESH THE PAGE
+    e.preventDefault();
     navigate({ to: "showcase", replace: true });
   };
 
@@ -30,11 +41,9 @@ export default function CreateCard({ formData, setFormData }) {
           <div className="input-container name">
             <input
               type="text"
-              name="fname"
+              name="fullName"
               placeholder="Your Full Name"
-              onChange={(e) =>
-                setFormData({ ...formData, fullName: e.target.value })
-              }
+              onChange={(e) => handleTextChange(e)}
             />
           </div>
           <div className="input-container name">
@@ -42,9 +51,7 @@ export default function CreateCard({ formData, setFormData }) {
               type="text"
               name="aboutMe"
               placeholder="About Me"
-              onChange={(e) =>
-                setFormData({ ...formData, aboutMe: e.target.value })
-              }
+              onChange={(e) => handleTextChange(e)}
             />
           </div>
           <h3>Technologies You Know</h3>
@@ -103,9 +110,8 @@ export default function CreateCard({ formData, setFormData }) {
               type="text"
               name="githubURL"
               placeholder="Github URL"
-              onChange={(e) =>
-                setFormData({ ...formData, githubURL: e.target.value })
-              }
+              onChange={(e) => handleTextChange(e)}
+
             />
           </div>
           <div className="input-container name">
@@ -113,9 +119,8 @@ export default function CreateCard({ formData, setFormData }) {
               type="text"
               name="twitterURL"
               placeholder="Twitter URL"
-              onChange={(e) =>
-                setFormData({ ...formData, twitterURL: e.target.value })
-              }
+              onChange={(e) => handleTextChange(e)}
+
             />
           </div>
           <div className="input-container name">
@@ -123,9 +128,8 @@ export default function CreateCard({ formData, setFormData }) {
               type="text"
               name="favouriteBooks"
               placeholder="Favourite Books"
-              onChange={(e) =>
-                setFormData({ ...formData, favouriteBooks: e.target.value })
-              }
+              onChange={(e) => handleTextChange(e)}
+
             />
           </div>
           <button onClick={handleClick} className="signup-btn" type="submit">

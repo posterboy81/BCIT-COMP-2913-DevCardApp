@@ -8,7 +8,6 @@ import { useState } from "react";
 const location = new ReactLocation();
 // Step 2: Specify the URLS (routes)/Pages for your application
 
-
 // Step 3: Wrap our entire application in the React Location Library
 
 export default function App() {
@@ -23,18 +22,18 @@ export default function App() {
     JS: false,
     Git: false,
     React: false,
-    NodeJS: false
+    NodeJS: false,
   });
 
   const routes = [
     {
       path: "/",
-      element: <CreateCard formData = {formData} setFormData={setFormData}/>
+      element: <CreateCard formData={formData} setFormData={setFormData} />,
     },
     {
       path: "showcase",
-      element: <CardShowcase formData = {formData}/>
-    }
+      element: <CardShowcase formData={formData} />,
+    },
   ];
 
   return (
