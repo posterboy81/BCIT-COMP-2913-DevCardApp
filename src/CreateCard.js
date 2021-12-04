@@ -118,7 +118,7 @@ export default function CreateCard({ formData, setFormData }) {
             <input
               type="text"
               name="twitterURL"
-              placeholder="Twitter URL"
+              placeholder="@username"
               onChange={(e) => handleTextChange(e)}
 
             />

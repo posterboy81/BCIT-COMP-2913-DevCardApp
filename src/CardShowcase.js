@@ -1,5 +1,5 @@
 import "./showcase.css";
-export default function CardShowCase({formData}) {
+export default function CardShowCase({ formData }) {
   return (
     <div className="pageBody">
       <main class="has-dflex-center">
@@ -18,7 +18,8 @@ export default function CardShowCase({formData}) {
                       </div>
                       <div class="infos">
                         <span>
-                          <i class="fas fa-user-circle"></i>&nbsp;&nbsp;{formData.fullName}
+                          <i class="fas fa-user-circle"></i>&nbsp;&nbsp;
+                          {formData.fullName}
                         </span>
                         <span>
                           <i class="fas fa-briefcase"></i>&nbsp;&nbsp;Full Stack
@@ -30,7 +31,9 @@ export default function CardShowCase({formData}) {
 
                   <div class="lx-card">
                     <div class="lx-row">
-                      <h1 class="title">Connect with Armaan</h1>
+                      <h1 class="title">
+                        Connect with {formData.fullName.split(" ")[0]}
+                      </h1>
                       <div class="mini-cards">
                         <a
                           class="has-dflex-center bs-md"
@@ -46,7 +49,7 @@ export default function CardShowCase({formData}) {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <i class="fab fa-twitter"></i>
+                          {formData.twitterURL}
                         </a>
                       </div>
                     </div>
@@ -57,26 +60,15 @@ export default function CardShowCase({formData}) {
                 <div class="lx-row">
                   <div class="lx-row lx-card">
                     <h1 class="title">
-                      <i class="fas fa-info-circle"></i>&nbsp;Welcome to
-                      Armaan's corner of the Internet
+                      <i class="fas fa-info-circle"></i>&nbsp;Welcome to 
+                      {formData.fullName.split(" ")[0]}'s corner of the Internet
                     </h1>
                   </div>
                   <div class="lx-row lx-card">
                     <h1 class="title">
                       <i class="fas fa-hand-point-right"></i>&nbsp;About me
                     </h1>
-                    <div class="text">
-                      <p>
-                        Hi, my name is&nbsp;<b>Armaan Dhanji</b>, but I'm better
-                        known by my nickname&nbsp;<i>@armaand</i>, and I'm a
-                        teacher in the School of Computing at BCIT.
-                      </p>
-                      <p>
-                        I&nbsp;&nbsp;<i class="fas fa-heart"></i>&nbsp; to code
-                        full-stack projects, always looking for innovative ways
-                        to write code that follows practices!
-                      </p>
-                    </div>
+                    <div class="text">{formData.aboutMe}</div>
                   </div>
                   <div class="lx-row lx-card">
                     <h1 class="title">
@@ -120,7 +112,7 @@ export default function CardShowCase({formData}) {
                       <i class="fas fa-book"></i>&nbsp;My favorite books
                     </h1>
                     <div class="text">
-                      <ol>
+                      {/* <ol>
                         <li>
                           <p>
                             <b>The Lord of the Rings</b>&nbsp;- J. R. R. Tolkien
@@ -148,7 +140,7 @@ export default function CardShowCase({formData}) {
                             Hawking
                           </p>
                         </li>
-                      </ol>
+                      </ol> */}
                     </div>
                   </div>
                 </div>
