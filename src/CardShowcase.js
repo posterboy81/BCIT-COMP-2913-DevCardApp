@@ -60,8 +60,7 @@ export default function CardShowCase({ formData }) {
                 <div class="lx-row">
                   <div class="lx-row lx-card">
                     <h1 class="title">
-                      <i class="fas fa-info-circle"></i>&nbsp;Welcome to 
-                      {formData.fullName.split(" ")[0]}'s corner of the Internet
+                      <i class="fas fa-info-circle"></i>&nbsp;Welcome to {formData.fullName.split(" ")[0]}'s corner of the Internet
                     </h1>
                   </div>
                   <div class="lx-row lx-card">

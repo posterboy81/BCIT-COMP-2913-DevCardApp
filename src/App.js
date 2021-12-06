@@ -4,14 +4,11 @@ import CreateCard from "./CreateCard";
 import CardShowcase from "./CardShowcase";
 import { useState } from "react";
 
-// Step 1: Create an instance of the ReactLocation Library
 const location = new ReactLocation();
-// Step 2: Specify the URLS (routes)/Pages for your application
-
-// Step 3: Wrap our entire application in the React Location Library
 
 export default function App() {
   const [formData, setFormData] = useState({
+    userID: 0,
     fullName: "",
     aboutMe: "",
     githubURL: "",

@@ -1,6 +1,9 @@
 import { useNavigate } from "react-location";
 
-export default function CreateCard({ formData, setFormData }) {
+export default function CreateCard({
+  formData,
+  setFormData,
+}) {
   const handleChange = (e) => {
     let key = e.target.value;
     let isChecked = e.target.checked;
@@ -21,7 +24,8 @@ export default function CreateCard({ formData, setFormData }) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    navigate({ to: "showcase", replace: true });
+    let index = formData.userID
+    navigate({ to: `showcase/${index}`, replace: true });
   };
 
   return (
@@ -111,7 +115,6 @@ export default function CreateCard({ formData, setFormData }) {
               name="githubURL"
               placeholder="Github URL"
               onChange={(e) => handleTextChange(e)}
-
             />
           </div>
           <div className="input-container name">
@@ -120,7 +123,6 @@ export default function CreateCard({ formData, setFormData }) {
               name="twitterURL"
               placeholder="@username"
               onChange={(e) => handleTextChange(e)}
-
             />
           </div>
           <div className="input-container name">
@@ -129,7 +131,6 @@ export default function CreateCard({ formData, setFormData }) {
               name="favouriteBooks"
               placeholder="Favourite Books"
               onChange={(e) => handleTextChange(e)}
-
             />
           </div>
           <button onClick={handleClick} className="signup-btn" type="submit">
