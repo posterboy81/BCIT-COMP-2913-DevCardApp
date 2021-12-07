@@ -25,6 +25,9 @@ export default function CreateCard({
   const handleClick = (e) => {
     e.preventDefault();
     let index = formData.userID
+    console.log("index before: " + index);
+    index++;
+    console.log("index after: " + index);
     navigate({ to: `showcase/${index}`, replace: true });
   };
 

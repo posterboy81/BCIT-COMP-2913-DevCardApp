@@ -13,7 +13,7 @@ export default function App() {
     aboutMe: "",
     githubURL: "",
     twitterURL: "",
-    favouriteBooks: "",
+    favouriteBooks: [""],
     HTML: false,
     CSS: false,
     JS: false,

@@ -1,4 +1,6 @@
 import "./showcase.css";
+import BookCovers from "./BookCovers";
+
 export default function CardShowCase({ formData }) {
   return (
     <div className="pageBody">
@@ -60,7 +62,8 @@ export default function CardShowCase({ formData }) {
                 <div class="lx-row">
                   <div class="lx-row lx-card">
                     <h1 class="title">
-                      <i class="fas fa-info-circle"></i>&nbsp;Welcome to {formData.fullName.split(" ")[0]}'s corner of the Internet
+                      <i class="fas fa-info-circle"></i>&nbsp;Welcome to{" "}
+                      {formData.fullName.split(" ")[0]}'s corner of the Internet
                     </h1>
                   </div>
                   <div class="lx-row lx-card">
@@ -111,35 +114,7 @@ export default function CardShowCase({ formData }) {
                       <i class="fas fa-book"></i>&nbsp;My favorite books
                     </h1>
                     <div class="text">
-                      {/* <ol>
-                        <li>
-                          <p>
-                            <b>The Lord of the Rings</b>&nbsp;- J. R. R. Tolkien
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <b>Foundation series</b>&nbsp;- Isaac Asimov
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <b>Cracking the Coding Interview</b>&nbsp;- Gayle
-                            Laakmann
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <b>Clean Code</b>&nbsp;- Rob Martin
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <b>A Brief History of Time</b>&nbsp;- Stephen
-                            Hawking
-                          </p>
-                        </li>
-                      </ol> */}
+                      <BookCovers formData={formData} />
                     </div>
                   </div>
                 </div>
