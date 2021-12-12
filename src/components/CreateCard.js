@@ -1,9 +1,8 @@
 import { useNavigate } from "react-location";
 
-export default function CreateCard({
-  formData,
-  setFormData,
-}) {
+export default function CreateCard({ formData, setFormData }) {
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     let key = e.target.value;
     let isChecked = e.target.checked;
@@ -20,13 +19,14 @@ export default function CreateCard({
     });
   };
 
-  const navigate = useNavigate();
-
   const handleClick = (e) => {
     e.preventDefault();
-    let index = formData.userID
+    let index = formData.userID;
     console.log("index before: " + index);
     index++;
+    setFormData((formData) => {
+      return { ...formData, userID: index };
+    });
     console.log("index after: " + index);
     navigate({ to: `showcase/${index}`, replace: true });
   };

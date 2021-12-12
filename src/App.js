@@ -1,7 +1,7 @@
 import "./App.css";
 import { Router, Outlet, ReactLocation } from "react-location";
-import CreateCard from "./CreateCard";
-import CardShowcase from "./CardShowcase";
+import CreateCard from "./components/CreateCard";
+import CardShowcase from "./components/CardShowcase";
 import { useState } from "react";
 
 const location = new ReactLocation();

@@ -1,5 +1,5 @@
 
-export default function BookCovers() {
+export default function BookCoversSearch({formData}) {
 
 
   return (
