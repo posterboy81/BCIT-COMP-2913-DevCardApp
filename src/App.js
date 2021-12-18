@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <Router routes={routes} location={location}>
-      <header>{JSON.stringify(formData)}</header>
+      {/* <header>{JSON.stringify(formData)}</header> */}
       <div>
         <Outlet />
       </div>

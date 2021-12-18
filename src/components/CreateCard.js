@@ -116,7 +116,7 @@ export default function CreateCard({ formData, setFormData }) {
             <input
               type="text"
               name="githubURL"
-              placeholder="Github URL"
+              placeholder="Github username"
               onChange={(e) => handleTextChange(e)}
             />
           </div>

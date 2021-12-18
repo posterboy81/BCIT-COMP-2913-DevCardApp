@@ -132,3 +132,8 @@ main section .mini-cards span:hover svg {
     grid-template-rows: 1fr 1fr 1fr;
   }
 }
+
+.book-image {
+  width: 150px;
+  height: 225px;
+}
