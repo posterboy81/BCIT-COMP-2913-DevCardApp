@@ -83,21 +83,26 @@ export default function CardShowCase({ formData }) {
                           <FontAwesomeIcon icon={faCss3} size="3x" />
                         </span>
                       ) : null}
-                      <span class="has-dflex-center bs-md" title="HTML">
-                        <FontAwesomeIcon icon={faHtml5} size="3x" />
-                      </span>
-                      <span class="has-dflex-center bs-md" title="JS">
-                        <FontAwesomeIcon icon={faJs} size="3x" />
-                      </span>
-                      <span class="has-dflex-center bs-md" title="Git">
-                        <FontAwesomeIcon icon={faGit} size="3x" />
-                      </span>
-                      <span class="has-dflex-center bs-md" title="Node JS">
-                        <FontAwesomeIcon icon={faNodeJs} size="3x" />
-                      </span>
-                      <span class="has-dflex-center bs-md" title="React">
-                        <FontAwesomeIcon icon={faReact} size="3x" />
-                      </span>
+                      {formData.js ? (
+                        <span class="has-dflex-center bs-md" title="JS">
+                          <FontAwesomeIcon icon={faJs} size="3x" />
+                        </span>
+                      ) : null}
+                      {formData.git ? (
+                        <span class="has-dflex-center bs-md" title="Git">
+                          <FontAwesomeIcon icon={faGit} size="3x" />
+                        </span>
+                      ) : null}
+                      {formData.NodeJS ? (
+                        <span class="has-dflex-center bs-md" title="Node JS">
+                          <FontAwesomeIcon icon={faNodeJs} size="3x" />
+                        </span>
+                      ) : null}
+                      {formData.react ? (
+                        <span class="has-dflex-center bs-md" title="React">
+                          <FontAwesomeIcon icon={faReact} size="3x" />
+                        </span>
+                      ) : null}
                     </div>
                   </div>
                   <div class="lx-row lx-card">
